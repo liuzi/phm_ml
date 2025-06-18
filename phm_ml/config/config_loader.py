@@ -43,4 +43,4 @@ class DataConfig:
         return cls
 
 
-print(DataConfig.from_yaml().path)
+DataConfig.from_yaml()
