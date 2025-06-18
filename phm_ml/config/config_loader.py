@@ -5,7 +5,7 @@ from typing import List, Dict, Optional
 from pathlib import Path
 
 class Settings:
-    PROJECT_ROOT: Path = Path(__file__).parent
+    PROJECT_ROOT: Path = Path(__file__).parent.parent.parent
 
 
 @dataclass
@@ -25,7 +25,7 @@ class DataConfig:
     # loading: Dict[str, str]
 
     @classmethod
-    def from_yaml(cls, config_path: str = "data_config.yaml") -> 'DataConfig':
+    def from_yaml(cls, config_path: str = "config/data.yaml") -> 'DataConfig':
         """Load configuration from a YAML file.
 
         Args:
@@ -37,10 +37,10 @@ class DataConfig:
         """
         with open(f"{Settings.PROJECT_ROOT}/{config_path}", 'r') as f:
             config = yaml.safe_load(f)
-        config['path'] = {k: f"{Settings.PROJECT_ROOT}/{v}" for k, v in config['path'].items()}
+        for attr in cls.__annotations__:
+            setattr(cls, attr, config[attr])
+        cls.path = {k: f"{Settings.PROJECT_ROOT}/{v}" for k, v in cls.path.items()}
+        return cls
 
-            
-        return cls(**config)
 
-
-
+print(DataConfig.from_yaml().path)

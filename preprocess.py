@@ -1,3 +1,4 @@
+## TODO: Merge this script (rawdata -> first version of processed data)
 import polars as pl
 import glob
 import re

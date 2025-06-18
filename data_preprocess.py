@@ -9,6 +9,6 @@ def preprocess_data(df: pl.DataFrame) -> pl.DataFrame:
     return df
 
 
-from config_loader import DataConfig
+from phm_ml.config.config_loader import DataConfig
 DATA_CONFIG = DataConfig.from_yaml("data.yaml")
 print(DATA_CONFIG)

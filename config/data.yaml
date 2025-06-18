@@ -1,8 +1,8 @@
 # Data paths configuration
 path:
   base_directory: "data" 
-  train_data: "interim/Lab1-2017-Q1-ST4000DM000.parquet"
-  test_data: "interim/Lab1-2016-Q4Half-ST4000DM000.parquet"
+  train_data: "data/interim/Lab1-2017-Q1-ST4000DM000.parquet"
+  test_data: "data/interim/Lab1-2016-Q4Half-ST4000DM000.parquet"
 
 # # Data loading parameters
 # loading:
