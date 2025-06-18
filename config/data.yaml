@@ -4,6 +4,14 @@ path:
   train_data: "data/interim/Lab1-2017-Q1-ST4000DM000.parquet"
   test_data: "data/interim/Lab1-2016-Q4Half-ST4000DM000.parquet"
 
+
+# Time-series parameters
+time_series:
+  sequence_length: 10
+  lookahead: 1
+  num_normal_serials: 100
+  max_normal_seq: 4_000
+
 # # Data loading parameters
 # loading:
 #   year: 2017
